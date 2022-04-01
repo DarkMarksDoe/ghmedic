@@ -16,12 +16,16 @@ class HomeController extends GetxController {
   @override
   void onInit() async{
     super.onInit();
-    await fetchEmployees();
+    //await fetchEmployees();
   }
 
-  Future fetchEmployees() async{
-    employees = await _employeesRepository.getEmployeesList();
-    isLoading = false;
-    update();
+  Future<void> fetchEmployees() async{
+    try{
+      employees = await _employeesRepository.getEmployeesList();
+      isLoading = false;
+      update();
+    }catch(e){
+      print(e);
+    }
   }
 }

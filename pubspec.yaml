@@ -28,6 +28,7 @@ dev_dependencies:
   # Local Storage
   hive: ^2.0.4
 
-flutter:
+  mockito:
 
+flutter:
   uses-material-design: true
